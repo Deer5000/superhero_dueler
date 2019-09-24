@@ -23,7 +23,22 @@ class Armor:
     def block(self):
         return random.randint(0, self.max_block)
 
+# if __name__ == "__main__":
+#     armor = Armor("Debugging Ability", 20)
+#     print(armor.name)
+#     print(armor.block())
+
+class Hero:
+    def __init__(self, name, starting_health=100):
+        self.name = name
+        self.abilities = []
+        self.armors = []
+        self.starting_health = starting_health
+        self.current_health = starting_health
+
 if __name__ == "__main__":
-    armor = Armor("Debugging Ability", 20)
-    print(armor.name)
-    print(armor.block())
+    # If you run this file from the terminal
+    # this block is executed.
+    my_hero = Hero("Grace Hopper", 200)
+    print(my_hero.name)
+    print(my_hero.current_health)
