@@ -21,7 +21,7 @@ class Armor:
         self.name = name
         self.max_block = max_block
     def block(self):
-        return random.randint(0, self.max_block)
+        return random.randint(1, self.max_block)
 
 # if __name__ == "__main__":
 #     armor = Armor("Debugging Ability", 20)
@@ -36,9 +36,38 @@ class Hero:
         self.starting_health = starting_health
         self.current_health = starting_health
 
+# if __name__ == "__main__":
+#     # If you run this file from the terminal
+#     # this block is executed.
+#     my_hero = Hero("Grace Hopper", 200)
+#     print(my_hero.name)
+#     print(my_hero.current_health)
+
+    def add_ability(self, ability):
+        self.abilities.append(ability)
+
+# if __name__ == "__main__":
+#     # If you run this file from the terminal
+#     # this block is executed.
+#     ability = Ability("Great Debugging", 50)
+#     hero = Hero("Grace Hopper", 200)
+#     hero.add_ability(ability)
+#     print(hero.abilities)
+
+    def add_armor(self, armor):
+        self.armors.append(armor)
+
+    def defend(self, damage_amt):
+        sum = 0
+        for armor in self.armors:
+            sum += armor.block()
+        return damage_amt-sum
+
+
 if __name__ == "__main__":
     # If you run this file from the terminal
     # this block is executed.
-    my_hero = Hero("Grace Hopper", 200)
-    print(my_hero.name)
-    print(my_hero.current_health)
+    armor = Armor("Great Debugging", 50)
+    hero = Hero("Grace Hopper", 200)
+    hero.add_armor(armor)
+    print(hero.defend(30))
