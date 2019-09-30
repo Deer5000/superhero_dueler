@@ -1,4 +1,4 @@
-import superheroes.py
+import superheroes
 
 
 if __name__ == "__main__":

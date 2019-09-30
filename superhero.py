@@ -1,11 +1,11 @@
 import random
 
 class Ability:
-    def __init__(self, name, max_damage):
+    def __init__(self, name, attack_strength):
         self.name = name
-        self.max_damage = max_damage
+        self.attack_strength = attack_strength
     def attack(self):
-        return random.randint(1, self.max_damage)
+        return random.randint(1, self.attack_strength)
 
 
 # my_Ability = Ability("Razorian","725")
@@ -129,7 +129,6 @@ class Hero:
 #     hero1.fight(hero2)
 class Weapon(Ability):
     def attack(self):
-
         return random.randint(self.max_damage//2, self.max_damage)
 
 class Team:
