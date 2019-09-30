@@ -35,6 +35,9 @@ class Hero:
         self.armors = []
         self.starting_health = starting_health
         self.current_health = starting_health
+        self.kills = 0
+        self.deaths = 0
+
 
 # if __name__ == "__main__":
 #     # If you run this file from the terminal
@@ -69,6 +72,11 @@ class Hero:
             sum += armor.block()
         return damage_amt-sum
 
+        def add_kills(self,num_kills):
+            self.kills += num_kills
+
+        def add_deaths(self, num_deaths):
+            self.deaths += num_deaths
 
 # if __name__ == "__main__":
 #     # If you run this file from the terminal
@@ -80,6 +88,7 @@ class Hero:
 
     def take_damage(self,damage):
         self.current_health -= self.defend(damage)
+        self.current_health = current_health - final_damage
 
 # if __name__ == "__main__":
 #     hero = Hero("Grace Hopper", 200)
